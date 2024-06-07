@@ -1,20 +1,26 @@
-<div class="login-container">
-  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-    <h2>Connexion</h2>
+<!-- login.component.html -->
 
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" required [(ngModel)]="email" name="email" #emailInput="ngModel">
-      <div *ngIf="emailInput.invalid && emailInput.touched" class="error">Email is required.</div>
-    </div>
+<div class="background" style="background-image: url('/assets/background.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; display: flex; justify-content: center; align-items: center;">
+  <div class="login-container">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="logo">
+      </div>
 
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" id="password" required [(ngModel)]="password" name="password" #passwordInput="ngModel">
-      <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error">Password is required.</div>
-    </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required [(ngModel)]="email" name="email" #emailInput="ngModel">
+        <div *ngIf="emailInput.invalid && emailInput.touched" class="error">Email is required.</div>
+      </div>
 
-    <button type="submit" [disabled]="loginForm.invalid">Login</button>
-  </form>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required [(ngModel)]="password" name="password" #passwordInput="ngModel">
+        <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error">Password is required.</div>
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  </div>
 </div>
-
+<router-outlet></router-outlet>

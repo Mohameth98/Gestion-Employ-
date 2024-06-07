@@ -1,16 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';  
 
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.css']
 })
-export class AuthService {
+export class AuthComponent {
 
-  constructor(private http: HttpClient) { }
-
-  register(email: string, password: string): Observable<any> {
-    // Your implementation here
-    return this.http.post<any>('your-api-url/register', { email, password });
-  }
 }

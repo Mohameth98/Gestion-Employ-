@@ -1,1 +1,36 @@
-<p>register works!</p>
+<!-- register.component.html -->
+<div class="background">
+  <div class="register-container">
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="logo">
+      </div>
+
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur:</label>
+        <input type="text" id="username" required [(ngModel)]="username" name="username" #usernameInput="ngModel">
+        <div *ngIf="usernameInput.invalid && usernameInput.touched" class="error">Nom d'utilisateur est requis.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required [(ngModel)]="email" name="email" #emailInput="ngModel">
+        <div *ngIf="emailInput.invalid && emailInput.touched" class="error">Email est requis.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" required [(ngModel)]="password" name="password" #passwordInput="ngModel">
+        <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error">Mot de passe est requis.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirmez le mot de passe:</label>
+        <input type="password" id="confirmPassword" required [(ngModel)]="confirmPassword" name="confirmPassword" #confirmPasswordInput="ngModel">
+        <div *ngIf="confirmPasswordInput.invalid && confirmPasswordInput.touched" class="error">La confirmation du mot de passe est requise.</div>
+      </div>
+
+      <button type="submit" [disabled]="registerForm.invalid">Inscription</button>
+    </form>
+  </div>
+</div>
