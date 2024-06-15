@@ -6,6 +6,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BadgesComponent } from './badges/badges.component';
+import { ChartsComponent } from './charts/charts.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,7 +20,10 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarComponent,
+    BadgesComponent,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,

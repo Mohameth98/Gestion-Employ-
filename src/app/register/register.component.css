@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 92vh;
+  height: 4vh;
   width: 89vw;
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@
 }
 
 .background {
-  position: fixed;
+  position: fixed;  
   top: 0;
   left: 0;
   width: 100%;
